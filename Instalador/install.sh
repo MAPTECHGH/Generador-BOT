@@ -4,10 +4,10 @@ coo=1
 IVAR="/etc/http-instas"
 SCPT_DIR="/etc/SCRIPT"
 rm -f gera*
-source <(curl -sSL https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/msg) >/dev/null
+source <(curl -sSL https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/msg) >/dev/null
 #!/bin/bash
 
-# menu maker (opciones 1, 2, 3,.....)
+# menu maker (options 1, 2, 3,.....)
 
 flech='➮' cOlM='⁙' && TOP='‣' && TTini='=====>>►► 🐲' && TTfin='🐲 ◄◄<<=====' && TTcent='💥' && RRini='【  ★' && RRfin='★  】' && CHeko='✅' && ScT='🛡️' && FlT='⚔️' && BoLCC='🪦' && ceLL='🧬' && aLerT='⚠️' && lLaM='🔥' && pPIniT='∘' && bOTg='🤖' && rAy='⚡' && tTfIn='】' && TtfIn='【' tTfLe='►' && rUlq='🔰' && h0nG='🍄' && lLav3='🗝️' && m3ssg='📩' && pUn5A='⚜' && p1t0='•'
 cOpyRig='©' && mbar2=' •••••••••••••••••••••••'
@@ -57,7 +57,7 @@ in_opcion() {
     read opcion
     echo "$opcion"
 }
-# centrado de texto
+# text centering
 print_center() {
     if [[ -z $2 ]]; then
         text="$1"
@@ -80,7 +80,7 @@ print_center() {
         fi
     done <<<$(echo -e "$text")
 }
-# titulos y encabesados
+# titles and headings
 title() {
     clear
     msg -bar
@@ -92,7 +92,7 @@ title() {
     msg -bar
 }
 
-# finalizacion de tareas
+# task completion
 enter() {
     msg -bar
     text="►► Presione enter para continuar ◄◄"
@@ -104,7 +104,7 @@ enter() {
     read
 }
 
-# opcion, regresar volver/atras
+# option, return return/back
 back() {
     msg -bar
     echo -ne "$(msg -verd " [0]") $(msg -verm2 ">") " && msg -bra "\033[1;41mVOLVER"
@@ -202,7 +202,7 @@ del() {
 }
 
 [[ -d /bin/ejecutar ]] && {
-    [[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/msg
+    [[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/msg
 } || mkdir /bin/ejecutar
 cor[0]="\033[0m"
 cor[1]="\033[1;34m"
@@ -227,7 +227,7 @@ apt upgrade -y
 install_ini() {
     clear
     msg -bar
-    echo -e "\033[92m        -- INSTALANDO PAQUETES NECESARIOS -- "
+    echo -e "\033[92m        -- INSTALLING NECESSARY PACKAGES -- "
     msg -bar
     ESTATUS=$(echo -e "\033[92mINSTALADO") &>/dev/null
     locale-gen en_US.UTF-8 >/dev/null 2>&1
@@ -318,10 +318,10 @@ function_verify() {
     unset keybot
     msg -bar
     [[ ! -e /etc/nivbot ]] && echo >/etc/nivbot
-    echo -e "\e[31m          BOTGEN LIBRE TE LO VENDIERON ?\e[32m"
+    echo -e "\e[31m          FREE BOTGEN DID THEY SELL IT TO YOU?\e[32m"
     [[ "$(echo "$(cat </etc/nivbot)")" < "3" ]] && {
         [[ -e /bin/downloadbot ]] && {
-            [[ -z $(cat </bin/downloadbot) ]] && read -p " DIGITE SI O NO : " keybot || unset keybot
+            [[ -z $(cat </bin/downloadbot) ]] && read -p " TYPE SI OR NO: " keybot || unset keybot
         }
     } || read -p " DIGITE SI O NO: " keybot
     [[ -z $keybot ]] && {
@@ -338,8 +338,8 @@ function_verify() {
         msg -bar
         echo -e "\n"
         echo -e "\e[31m    LA IP $(wget -qO- ipv4.icanhazip.com) FUE RECHAZADA!"
-        echo -e " $link No AUTORIZADA el ACCESO "
-        echo -e " SI DESEAS USAR EL BOTGEN CONTACTE A @ChumoGH"
+        echo -e " $link NOT AUTHORIZED ACCESS "
+        echo -e " IF YOU WANT TO USE THE BOTGEN CONTACT @ChumoGH"
         msg -bar
         [[ -e "/bin/ShellBot.sh" ]] && rm /bin/ShellBot.sh
         [[ -e /bin/downloadbot ]] && rm -f /bin/downloadbot
@@ -347,11 +347,11 @@ function_verify() {
         msg -bar
         exit 1
     } && {
-        ### INTALAR VERCION DE SCRIPT
+        ### INCLUDES VERSION OF SCRIPT
         clear && clear
         msg -bar
         echo -e "\e[32m      LA IP $(wget -qO- ipv4.icanhazip.com) ESTA AUTORIZADA!"
-        [[ -e /usr/bin/downBase ]] || echo 'https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/lista' >/usr/bin/downBase && chmod 777 /usr/bin/downBase
+        [[ -e /usr/bin/downBase ]] || echo 'https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/lista' >/usr/bin/downBase && chmod 777 /usr/bin/downBase
         v1=$(curl -sSL "https://raw.githubusercontent.com/NetVPS/Multi-Script/main/ChuGH-5.7u/adm-lite/v-local.log")
         [[ ! -e /bin/downloadbot ]] && {
             [[ $link = 'https://raw.githubusercontent.com' ]] && echo "https://raw.githubusercontent.com" >/bin/downloadbot || echo "$(ofus $keybot)" >/bin/downloadbot
@@ -363,8 +363,8 @@ function_verify() {
             echo $lv >/etc/nivbot
         } || echo "1" >/etc/nivbot
         echo $Key >/etc/valkey && chmod +x /etc/valkey
-        [[ -e /usr/bin/downBase ]] || echo 'https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/lista' >/usr/bin/downBase && chmod 777 /usr/bin/downBase
-        [[ -e /bin/ShellBot.sh ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/ShellBot.sh >/dev/null && chmod +rwx /bin/ShellBot.sh
+        [[ -e /usr/bin/downBase ]] || echo 'https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/lista' >/usr/bin/downBase && chmod 777 /usr/bin/downBase
+        [[ -e /bin/ShellBot.sh ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/ShellBot.sh >/dev/null && chmod +rwx /bin/ShellBot.sh
 
         sleep 3s
     }
@@ -388,7 +388,7 @@ fun_filez() {
     fup="$HOME/update"
     echo "$1" >>$HOME/files.log
 
-    wget -O /bin/http-server.sh https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Bot/http-server.py  && chmod +x /bin/http-server.sh
+    wget -O /bin/http-server.sh https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Bot/http-server.py  && chmod +x /bin/http-server.sh
     [[ -e $1 ]] && mv -f ${fup}/$1 /etc/SCRIPT/$1
 }
 
@@ -415,7 +415,7 @@ ofus() {
 }
 
 DOWS() {
-    wget -O /root/lista https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Otros/lista
+    wget -O /root/lista https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Otros/lista
     wget --no-check-certificate -i $HOME/lista
 }
 
@@ -435,7 +435,7 @@ function aguarde() {
     }
     echo -ne "\033[1;37m TRASLADANDO FILES \033[1;32mSCRIPT \033[1;37me \033[1;32mAUTOGEN\033[1;32m.\033[1;33m.\033[1;31m. \033[1;33m"
     helice
-    echo -e "\e[1D REALIZADO"
+    echo -e "\e[1D DONE"
 }
 
 atualiza_fun() {
@@ -453,10 +453,10 @@ atualiza_fun() {
     done
     mkdir -p /etc/SCRIPT
     mv -f /root/update/* /etc/SCRIPT/
-    wget -q -O /usr/bin/gerar https://raw.githubusercontent.com/NetVPS/Generador-BOT/main/Menu-Bash/gerador.sh && chmod +rwx /usr/bin/gerar
+    wget -q -O /usr/bin/gerar https://raw.githubusercontent.com/MAPTECHGH/Generador-BOT/main/Menu-Bash/gerador.sh && chmod +rwx /usr/bin/gerar
     cd $HOME
     msg -bar
-    echo -e "\033[1;92m           DIGITE EL COMANDO: \033[1;33mgerar  "
+    echo -e "\033[1;92m           TYPE THE COMMAND: \033[1;33mgerar  "
     msg -bar
     [[ -e $HOME/lista ]] && rm $HOME/lista
     [[ -d $HOME/update ]] && rm -rf $HOME/update
